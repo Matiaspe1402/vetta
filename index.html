@@ -286,17 +286,25 @@
   .problem-grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    gap:1px;
-    background:var(--color-line);
-    border:1px solid var(--color-line);
+    gap:22px;
   }
   @media(max-width:760px){ .problem-grid{grid-template-columns:1fr;} }
   .problem-item{
     background:#fff;
-    padding:32px 30px;
+    border:1px solid var(--color-line);
+    padding:30px 28px;
     display:flex;
-    gap:20px;
+    gap:18px;
     align-items:flex-start;
+    cursor:default;
+    transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+  }
+  .problem-item:hover{
+    transform:scale(1.035);
+    box-shadow:0 14px 34px rgba(34,57,71,0.14);
+    border-color:var(--color-primary);
+    position:relative;
+    z-index:2;
   }
   .problem-num{
     font-family:var(--font-display);
@@ -308,6 +316,12 @@
     border-radius:50%;
     display:flex; align-items:center; justify-content:center;
     flex-shrink:0;
+    transition:transform .22s ease, background .22s ease, color .22s ease;
+  }
+  .problem-item:hover .problem-num{
+    transform:scale(1.12);
+    background:var(--color-primary);
+    color:#fff;
   }
   .problem-item p{font-size:15.5px; color:var(--color-ink); line-height:1.6; padding-top:5px;}
   .problem-item strong{color:var(--color-primary); display:block; font-family:var(--font-display); font-size:16px; margin-bottom:6px;}
@@ -444,6 +458,15 @@
   .case-study-row:last-child{border-bottom:none;}
   @media(max-width:560px){
     .case-study-row{grid-template-columns:32px 1fr; gap:14px;}
+  }
+  .case-study-row-problem{
+    background:var(--color-mist);
+    box-shadow:inset 3px 0 0 0 var(--color-primary);
+    padding-left:16px;
+  }
+  .case-study-row-problem .case-study-text p strong{
+    color:var(--color-primary);
+    font-weight:700;
   }
   .case-study-icon{
     width:40px; height:40px;
@@ -691,7 +714,7 @@
       <div class="problem-grid reveal">
         <div class="problem-item">
           <div class="problem-num">1</div>
-          <p><strong>Información dispersa.</strong>Datos repartidos entre planillas, chats y papeles que nadie termina de consolidar en un solo lugar.</p>
+          <p><strong>Información dispersa, sin trazabilidad.</strong>Datos repartidos entre planillas, chats y papeles, sin un registro claro de qué pasó, cuándo y quién fue responsable.</p>
         </div>
         <div class="problem-item">
           <div class="problem-num">2</div>
@@ -699,19 +722,11 @@
         </div>
         <div class="problem-item">
           <div class="problem-num">3</div>
-          <p><strong>Datos que no se convierten en decisión.</strong>La información existe, pero llega tarde o desordenada para decidir a tiempo.</p>
+          <p><strong>Decisiones que llegan tarde.</strong>La información existe, pero llega desordenada o a destiempo para decidir cuando importa.</p>
         </div>
         <div class="problem-item">
           <div class="problem-num">4</div>
-          <p><strong>Falta de trazabilidad.</strong>No queda registro claro de qué pasó, cuándo pasó y quién fue responsable de cada paso.</p>
-        </div>
-        <div class="problem-item">
-          <div class="problem-num">5</div>
-          <p><strong>Herramientas genéricas forzadas.</strong>Sistemas armados para "cualquier empresa" que el equipo termina adaptando a la fuerza.</p>
-        </div>
-        <div class="problem-item">
-          <div class="problem-num">6</div>
-          <p><strong>Crecimiento sin estructura.</strong>La operación creció más rápido que los procesos que la sostienen, y hoy cuesta escalar.</p>
+          <p><strong>Herramientas que no acompañan el crecimiento.</strong>Sistemas genéricos que el equipo adapta a la fuerza, y que ya no alcanzan a sostener la operación.</p>
         </div>
       </div>
     </div>
@@ -815,13 +830,13 @@
         </header>
 
         <div class="case-study-body">
-          <div class="case-study-row">
+          <div class="case-study-row case-study-row-problem">
             <div class="case-study-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
             </div>
             <div class="case-study-text">
               <span class="case-study-label">El problema</span>
-              <p>Información dispersa y formatos no estandarizados. Consolidar datos para las liquidaciones exigía un esfuerzo administrativo inmenso, elevando el riesgo de errores en procesos críticos.</p>
+              <p>Información dispersa y formatos no estandarizados. <strong>Consolidar datos para las liquidaciones exigía un esfuerzo administrativo inmenso, elevando el riesgo de errores en procesos críticos.</strong></p>
             </div>
           </div>
 
