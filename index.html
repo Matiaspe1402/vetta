@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="es-AR">
 <head>
 <meta charset="UTF-8">
@@ -451,18 +451,17 @@
     display:grid;
     grid-template-columns:40px 1fr;
     gap:18px;
-    padding:22px 0;
+    padding:22px 16px;
+    background:var(--color-mist);
     border-bottom:1px solid var(--color-line);
     align-items:start;
   }
   .case-study-row:last-child{border-bottom:none;}
   @media(max-width:560px){
-    .case-study-row{grid-template-columns:32px 1fr; gap:14px;}
+    .case-study-row{grid-template-columns:32px 1fr; gap:14px; padding:20px 14px;}
   }
   .case-study-row-problem{
-    background:var(--color-mist);
     box-shadow:inset 3px 0 0 0 var(--color-primary);
-    padding-left:16px;
   }
   .case-study-row-problem .case-study-text p strong{
     color:var(--color-primary);
@@ -470,7 +469,7 @@
   }
   .case-study-icon{
     width:40px; height:40px;
-    background:var(--color-support);
+    background:#fff;
     color:var(--color-primary);
     display:flex; align-items:center; justify-content:center;
     flex-shrink:0;
@@ -824,10 +823,10 @@
 
       <!-- Tarjeta de caso de estudio: La Martina -->
       <article class="case-study reveal">
-        <header class="case-study-head">
+        <div class="case-study-head">
           <h3>La Martina Servicios Agrícolas SRL</h3>
           <span class="case-study-sector">Agroindustria</span>
-        </header>
+        </div>
 
         <div class="case-study-body">
           <div class="case-study-row case-study-row-problem">
